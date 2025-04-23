@@ -4,7 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
@@ -25,6 +32,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.pratice.jetpackcompose.ui.theme.JetPackComposeTheme
 
@@ -61,6 +69,37 @@ fun previewFunction(){
 //    )) {
 //        Text(text = "Hello")
 //    }
+/*
+Column is use for vertical arrange the view one after another
+Row is use for horizontal arrange the view one by one
+ */
+    /*
+     Column(verticalArrangement = Arrangement.SpaceEvenly, horizontalAlignment = Alignment.CenterHorizontally) {
+         Text(text = "A", fontWeight = FontWeight.Bold, fontSize = 26.sp)
+         Text(text = "B", fontWeight = FontWeight.Bold, fontSize = 26.sp)
+     }
+    Row(horizontalArrangement = Arrangement.SpaceEvenly, verticalAlignment = Alignment.CenterVertically){
+        Text(text = "A", fontWeight = FontWeight.Bold, fontSize = 26.sp)
+        Text(text = "B", fontWeight = FontWeight.Bold, fontSize = 26.sp)
+    }
+
+
+    Column {
+        ListViewtext(R.drawable.ic_launcher_foreground,"Deepak","Android Developer")
+        ListViewtext(R.drawable.ic_launcher_foreground,"Deepak1","Android Developer")
+        ListViewtext(R.drawable.ic_launcher_foreground,"Deepak2","Android Developer")
+        ListViewtext(R.drawable.ic_launcher_foreground,"Deepak3","Android Developer")
+
+    }
+
+     */
+    /*
+    Box is work as a frame layout of android studio the view framed like a stack ek ke uper ek
+     */
+    Box(){
+        Image(painter = painterResource(id = R.drawable.ic_launcher_background) , contentDescription = "")
+        Image(painter = painterResource(id = R.drawable.ic_launcher_foreground) , contentDescription = "")
+    }
 
 
 }
@@ -79,4 +118,15 @@ fun TextInput(){
         },
         label = { Text(text = "Enter Message")}
     )
+}
+@Composable
+fun ListViewtext(image:Int,name:String,des:String){
+    Row {
+        Image(painter = painterResource(id = image),
+            colorFilter = ColorFilter.tint(Color.Black),contentDescription ="", modifier = Modifier.size(80.dp) )
+        Column(Modifier.padding(0.dp,20.dp,0.dp,0.dp)) {
+            Text(text = name, fontWeight = FontWeight.Bold, fontSize = 18.sp)
+            Text(text = des, fontWeight = FontWeight(200), fontSize = 14.sp)
+        }
+    }
 }
