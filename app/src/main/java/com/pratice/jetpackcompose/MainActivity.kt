@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -95,11 +97,23 @@ Row is use for horizontal arrange the view one by one
      */
     /*
     Box is work as a frame layout of android studio the view framed like a stack ek ke uper ek
-     */
+
     Box(){
         Image(painter = painterResource(id = R.drawable.ic_launcher_background) , contentDescription = "")
         Image(painter = painterResource(id = R.drawable.ic_launcher_foreground) , contentDescription = "")
     }
+
+     */
+    /*
+    Modifiers it is used to decorate and augment composables, allowing you to customize their appearance, behavior, and layout without altering their internal state
+     */
+    Image(
+        painter = painterResource(id = R.drawable.ic_launcher_foreground),
+        colorFilter = ColorFilter.tint(Color.Black),
+        contentScale = ContentScale.Crop,
+        modifier = Modifier.clickable {  }.size(100.dp).padding(20.dp).background(Color.Blue),
+        contentDescription = "Testing image")
+
 
 
 }
