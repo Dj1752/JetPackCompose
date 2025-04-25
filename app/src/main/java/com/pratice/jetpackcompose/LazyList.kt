@@ -1,6 +1,7 @@
 package com.pratice.jetpackcompose
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -8,9 +9,12 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardColors
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -35,17 +39,18 @@ public fun PreviewItem(){
 
 @Composable
 fun BlogCategory(img:Int,title:String,subtitle:String){
-    Card(modifier = Modifier.padding(8.dp)) {
-        Row {
+    Card(modifier = Modifier
+        .padding(10.dp)
+        .background(Color.White), colors = CardDefaults.cardColors(Color.White)) {
+        Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
             Image(painter = painterResource(id = img),
-                colorFilter = ColorFilter.tint(Color.Black),
                 contentDescription ="",
                 modifier = Modifier
                     .size(80.dp)
                     .weight(.2f)   )
             ItemDesc(title, subtitle,
                 Modifier
-                    .padding(0.dp, 20.dp, 0.dp, 0.dp)
+                    .padding(8.dp)
                     .weight(.8f))
         }
     }
