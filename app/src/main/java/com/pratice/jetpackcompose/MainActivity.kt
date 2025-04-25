@@ -43,7 +43,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
            // TextInput()
-            PreviewItem()
+            //PreviewItem()
+            Recomposable()
         }
     }
 }
