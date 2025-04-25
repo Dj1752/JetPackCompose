@@ -44,7 +44,8 @@ class MainActivity : ComponentActivity() {
         setContent {
            // TextInput()
             //PreviewItem()
-            Recomposable()
+            //Recomposable()
+            Notification()
         }
     }
 }
