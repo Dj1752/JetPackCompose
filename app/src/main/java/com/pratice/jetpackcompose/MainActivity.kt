@@ -42,7 +42,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TextInput()
+           // TextInput()
+            PreviewItem()
         }
     }
 }
@@ -111,7 +112,11 @@ Row is use for horizontal arrange the view one by one
         painter = painterResource(id = R.drawable.ic_launcher_foreground),
         colorFilter = ColorFilter.tint(Color.Black),
         contentScale = ContentScale.Crop,
-        modifier = Modifier.clickable {  }.size(100.dp).padding(20.dp).background(Color.Blue),
+        modifier = Modifier
+            .clickable { }
+            .size(100.dp)
+            .padding(20.dp)
+            .background(Color.Blue),
         contentDescription = "Testing image")
 
 
