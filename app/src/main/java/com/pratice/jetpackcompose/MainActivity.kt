@@ -1,5 +1,6 @@
 package com.pratice.jetpackcompose
 
+import android.content.res.Resources.Theme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -30,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -46,6 +48,7 @@ class MainActivity : ComponentActivity() {
             //PreviewItem()
             //Recomposable()
             Notification()
+            App()
         }
     }
 }
@@ -148,6 +151,25 @@ fun ListViewtext(image:Int,name:String,des:String){
         Column(Modifier.padding(0.dp,20.dp,0.dp,0.dp)) {
             Text(text = name, fontWeight = FontWeight.Bold, fontSize = 18.sp)
             Text(text = des, fontWeight = FontWeight(200), fontSize = 14.sp)
+        }
+    }
+}
+
+@Composable
+fun App(){
+    var theme = remember { mutableStateOf(false) }
+    JetPackComposeTheme(theme.value) {
+
+        Column(Modifier.background(MaterialTheme.colorScheme.background)) {
+            Text(
+                text = "Deepak",
+                style = MaterialTheme.typography.titleLarge
+            )
+            Button(onClick = {
+                theme.value = !theme.value
+            }) {
+                Text(text = "Change theme")
+            }
         }
     }
 }
