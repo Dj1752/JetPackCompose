@@ -51,7 +51,8 @@ class MainActivity : ComponentActivity() {
 //            App()
             //SideEffect()
            // RememberCoroutine()
-            RememberUpdateState()
+           // RememberUpdateState()
+            DisposableApps()
         }
     }
 }

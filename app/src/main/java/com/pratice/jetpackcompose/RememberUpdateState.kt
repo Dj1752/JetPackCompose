@@ -12,7 +12,7 @@ import kotlinx.coroutines.delay
 /*
 Why we use rememberUpdateState
 1)jab hum kuch code background mai run kar raha hai and it is taking time so mera update data should be pass
-in that so we use rememberupdatestate
+in that so we use rememberupdatestate 
  */
 @Composable
 fun RememberUpdateState(){
