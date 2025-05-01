@@ -52,7 +52,9 @@ class MainActivity : ComponentActivity() {
             //SideEffect()
            // RememberCoroutine()
            // RememberUpdateState()
-            DisposableApps()
+          //  DisposableApps()
+           // ProduceStateComposable()
+            DerivedStateComposable()
         }
     }
 }
