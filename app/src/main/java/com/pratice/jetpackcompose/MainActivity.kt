@@ -47,8 +47,9 @@ class MainActivity : ComponentActivity() {
            // TextInput()
             //PreviewItem()
             //Recomposable()
-            Notification()
-            App()
+//            Notification()
+//            App()
+            SideEffect()
         }
     }
 }
