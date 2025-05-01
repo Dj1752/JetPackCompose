@@ -49,7 +49,8 @@ class MainActivity : ComponentActivity() {
             //Recomposable()
 //            Notification()
 //            App()
-            SideEffect()
+            //SideEffect()
+            RememberCoroutine()
         }
     }
 }
