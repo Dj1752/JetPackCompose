@@ -50,7 +50,8 @@ class MainActivity : ComponentActivity() {
 //            Notification()
 //            App()
             //SideEffect()
-            RememberCoroutine()
+           // RememberCoroutine()
+            RememberUpdateState()
         }
     }
 }
